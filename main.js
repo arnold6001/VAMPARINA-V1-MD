@@ -111,8 +111,10 @@ const { anticallCommand, readState: readAnticallState } = require('./commands/an
 // Global settings
 global.packname = settings.packname;
 global.author = settings.author;
-global.channelLink = "https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A";
-global.ytch = "Mr Unique Hacker";
+global.channelLink = "https://whatsapp.com/channel/0029VbAwhrYChq6JPHOMOT0L";
+global.idchannel =
+"0029VbAwhrYChq6JPHOMOT0L@newsletter*"
+global.ytch = "Kylan Dylan";
 
 // Add this near the top of main.js with other global configurations
 const channelInfo = {
@@ -120,8 +122,8 @@ const channelInfo = {
         forwardingScore: 1,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'KnightBot MD',
+            newsletterJid: '0029VbAwhrYChq6JPHOMOT0L@newsletter*',
+            newsletterName: 'VAMPARINA V1',
             serverMessageId: -1
         }
     }
@@ -219,7 +221,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
         }
 
         // Then check for command prefix
-        if (!userMessage.startsWith('.')) {
+        if (!userMessage.startsWith('')) {
             // Show typing indicator if autotyping is enabled
             await handleAutotypingForMessage(sock, chatId, userMessage);
 
