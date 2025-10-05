@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session ID Requester</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        .session-box { margin-top: 1em; padding: 1em; border: 1px solid #ccc; }
+        .info { margin-top: 2em; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Request a Session ID</h1>
+    <button onclick="requestSessionId()">Request Session ID</button>
+    <div id="sessionResult" class="session-box" style="display:none;"></div>
+    <div class="info">
+        <strong>Owner:</strong> Arnold Chirchir<br>
+        <strong>Company Email:</strong> arnolkipruto193@gmail.com
+    </div>
+    <script>
+        function requestSessionId() {
+            fetch('/api/session', { method: 'POST' })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('sessionResult').style.display = 'block';
+                    document.getElementById('sessionResult').innerHTML =
+                        `<strong>Session ID:</strong> ${data.sessionId}<br>
+                         <strong>Owner:</strong> ${data.owner}<br>
+                         <strong>Company Email:</strong> ${data.companyEmail}`;
+                })
+                .catch(err => alert('Error: ' + err));
+        }
+    </script>
+</body>
+</html>
