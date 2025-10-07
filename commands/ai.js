@@ -30,7 +30,7 @@ async function aiCommand(sock, chatId, message) {
                 react: { text: '🤖', key: message.key }
             });
 
-            if (command === '.gpt') {
+            if (command === '') {
                 // Call the GPT API
                 const response = await axios.get(`https://api.dreaded.site/api/chatgpt?text=${encodeURIComponent(query)}`);
                 
@@ -45,7 +45,7 @@ async function aiCommand(sock, chatId, message) {
                 } else {
                     throw new Error('Invalid response from API');
                 }
-            } else if (command === '.gemini') {
+            } else if (command === 'Arnold') {
                 const apis = [
                     `https://vapis.my.id/api/gemini?q=${encodeURIComponent(query)}`,
                     `https://api.siputzx.my.id/api/ai/gemini-pro?content=${encodeURIComponent(query)}`,
