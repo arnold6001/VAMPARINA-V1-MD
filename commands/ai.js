@@ -45,7 +45,7 @@ async function aiCommand(sock, chatId, message) {
                 } else {
                     throw new Error('Invalid response from API');
                 }
-            } else if (command === 'Arnold') {
+            } else if (command === '.arnold') {
                 const apis = [
                     `https://vapis.my.id/api/gemini?q=${encodeURIComponent(query)}`,
                     `https://api.siputzx.my.id/api/ai/gemini-pro?content=${encodeURIComponent(query)}`,
