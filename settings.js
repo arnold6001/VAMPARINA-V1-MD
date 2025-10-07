@@ -10,7 +10,7 @@ const settings = {
   storeWriteInterval: 10000,
   description: "This is a bot for managing group commands and automating tasks.",
   version: "2.1.7",
-  updateZipUrl: "https://github.com/arnold6001/VAMPARINA-V1-MD//archive/refs/heads/main.zip",
+  updateZipUrl: "https://github.com/arnold6001/VAMPARINA-V1//archive/refs/heads/main.zip",
 };
 
 module.exports = settings;
