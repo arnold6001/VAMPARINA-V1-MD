@@ -7,7 +7,7 @@ async function aiCommand(sock, chatId, message) {
         
         if (!text) {
             return await sock.sendMessage(chatId, { 
-                text: "Please provide a question after .gpt or .gemini\n\nExample: .gpt write a basic html code"
+                text: "Please provide a question after arnold or chirchir\n\nExample: arnold write a basic html code"
             }, {
                 quoted: message
             });
@@ -20,17 +20,17 @@ async function aiCommand(sock, chatId, message) {
 
         if (!query) {
             return await sock.sendMessage(chatId, { 
-                text: "Please provide a question after .gpt or .gemini"
+                text: "Please provide a question after arnold or chirchir"
             }, {quoted:message});
         }
 
         try {
             // Show processing message
             await sock.sendMessage(chatId, {
-                react: { text: '🤖', key: message.key }
+                react: { text: 'arnold...loading...', key: message.key }
             });
 
-            if (command === '') {
+            if (command === 'arnold') {
                 // Call the GPT API
                 const response = await axios.get(`https://api.dreaded.site/api/chatgpt?text=${encodeURIComponent(query)}`);
                 
@@ -45,7 +45,7 @@ async function aiCommand(sock, chatId, message) {
                 } else {
                     throw new Error('Invalid response from API');
                 }
-            } else if (command === '.arnold') {
+            } else if (command === 'chirchir') {
                 const apis = [
                     `https://vapis.my.id/api/gemini?q=${encodeURIComponent(query)}`,
                     `https://api.siputzx.my.id/api/ai/gemini-pro?content=${encodeURIComponent(query)}`,
